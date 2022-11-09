@@ -7,7 +7,8 @@ This project is going to be great. Woooo hoo!
 - convert international age to korean age & vice versa
 - convert bday to months, day, hours since birth
 - appropriate age gap calc (half your own age + 7 years)
--
+- convert bday to zodiac sign
+- convert bday to chinese zodiac
 
 ## Resources:
 
