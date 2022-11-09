@@ -1,26 +1,41 @@
-import React from 'react'
-import logo from './images/logo.png'
+import React, { useEffect, useState } from "react";
+import ConverterTypes from "./components/ConverterTypes";
+import KoreanAgeCalc from "./components/KoreanAgeCalc";
+import logo from "./images/logo.png";
+import {
+  H1,
+  H3,
+  P,
+  SCHeader,
+  SCConverterContainer,
+  SCFooter,
+} from "./stylesheets/Styles";
 
-function App() {
+const App = () => {
+  const [showCalc, setShowCal] = useState(false);
+
   return (
     <div className="App">
-      <div className='header'>
-        <img src={logo} alt="logo" className="logo"></img>
-        <h1>Age Converter</h1>
-      </div>
-      <div className="container">
-        <div className="form">
-          <h2>Birthday</h2>
-          <input type="date" id="birthday" name="birthday"></input>
-          <button>Convert</button>
-        </div>
-      </div>
-      <div className="footer">
-        <h3>Created by</h3>
-        <p><i>Amy Martin | Joe Owen</i></p>
-      </div>
-    </div>
-  )
-}
+      <SCHeader>
+        <H1>AGE CONVERTER</H1>
+      </SCHeader>
 
-export default App
+      <SCConverterContainer>
+        {!showCalc ? (
+          <ConverterTypes setShowCal={setShowCal} />
+        ) : (
+          <KoreanAgeCalc />
+        )}
+      </SCConverterContainer>
+
+      <SCFooter>
+        <H3>Created by</H3>
+        <P>
+          <i>Amy Martin & Joe Owen</i>
+        </P>
+      </SCFooter>
+    </div>
+  );
+};
+
+export default App;
